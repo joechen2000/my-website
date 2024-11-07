@@ -253,3 +253,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // 取得 modal 和其他相關元素
+    const modal = document.getElementById('storyModal');
+    const closeBtn = document.querySelector('.close');
+
+    // 確保 modal 初始狀態完全隱藏
+    if (modal) {
+        modal.style.display = 'none';
+    }
+
+    // 綁定 scroll-item 的點擊事件
+    document.querySelectorAll('.scroll-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const title = item.getAttribute('data-title');
+            const story = item.getAttribute('data-story');
+            if (title && story) {
+                showStory(title, story);
+            }
+        });
+    });
+
+    // 點擊關閉按鈕時隱藏彈窗
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+
+    // 點擊彈窗外部區域來關閉彈窗
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // 顯示故事的函數
+    function showStory(title, story) {
+        if (modal) {
+            document.getElementById('storyTitle').innerText = title;
+            document.getElementById('storyText').innerText = story;
+            modal.style.display = 'flex';
+        }
+    }
+});
