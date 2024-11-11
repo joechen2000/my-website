@@ -304,6 +304,49 @@
 </div>
 
 
+<!-- 模態視窗 -->
+<div id="welcome-modal" class="modal">
+    <div class="modal-content animate__animated animate__fadeInDown">
+        <span class="close-button">&times;</span>
+        <div class="modal-text">
+            <h1>歡迎來到龍騰數位敘事網站！</h1>
+            <p>配合以下龍騰教材：</p>
+            <h7>公民與社會科第一冊第一章</h7>
+            <p>公民身分與普世人權</p>
+            <h5>歷史科第三冊第二章</h5>
+            <p>個人、自由、理性</p>
+        </div>
+        <button class="enter-button" onclick="closeModal()">進入網站</button>
+    </div>
+</div>
+
+<script>
+    // JavaScript 用於控制模態彈出
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('welcome-modal');
+        const closeButton = document.querySelector('.close-button');
+        const enterButton = document.querySelector('.enter-button');
+
+        // 顯示模態
+        modal.style.display = 'flex';
+
+        // 點擊關閉按鈕關閉模態
+        closeButton.addEventListener('click', closeModal);
+        enterButton.addEventListener('click', closeModal);
+
+        // 點擊模態外部關閉模態
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    });
+
+    function closeModal() {
+        const modal = document.getElementById('welcome-modal');
+        modal.style.display = 'none';
+    }
+</script>
 
 
 
@@ -383,7 +426,7 @@
         const container = document.getElementById('report-container');
         container.innerHTML = `
             <h3>國際特赦組織最新報告</h3>
-            <a href="https://www.amnesty.org/en/">點擊這裡查看國際特赦組織最新報告</a>
+            <a href="https://www.amnesty.org/en/latest/reports/" target="_blank">點擊這裡查看國際特赦組織最新報告</a>
             <h3>自由之家最新報告</h3>
             <a href="https://freedomhouse.org/reports" target="_blank">點擊這裡查看自由之家最新報告</a>
         `;

@@ -124,6 +124,34 @@ h2:hover {
     color: #002060;
 }
 
+h5 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ff00eaaf;
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: color 0.5s ease;
+}
+
+h5:hover {
+    color: #002060;
+}
+
+h7 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #fbff00d2;
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: color 0.5s ease;
+}
+
+h7:hover {
+    color: #002060;
+}
+
 p {
     font-size: 1.2rem;
     margin-bottom: 25px;
@@ -359,4 +387,92 @@ footer {
 
 .close:hover {
     color: #000;
+}
+
+/* 模態視窗的 CSS */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none; /* 預設隱藏 */
+}
+
+.modal-content {
+    background: linear-gradient(to right, #ffffff, #e6f2ff);
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation-duration: 1s; /* 讓動畫過渡更流暢 */
+}
+
+.modal-text {
+    margin-bottom: 30px;
+}
+
+.modal-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #004080;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-text h7 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #ffaa00;
+}
+
+.modal-text h5 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #ffaa99;
+}
+
+.modal-text p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #333;
+}
+
+.close-button:hover {
+    color: #ff0000;
+}
+
+.enter-button {
+    background: linear-gradient(to right, #ffaa00, #ffcc00);
+    color: #004080;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.enter-button:hover {
+    background: linear-gradient(to right, #ff8800, #ffaa00);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
