@@ -1,0 +1,75 @@
+{
+    "title": {
+      "media": {
+        "url": "images/usdevelopment.jpg",
+        "caption": "美國人權發展"
+      },
+      "text": {
+        "headline": "美國公民權利發展歷程",
+        "text": "從美國獨立到現代民權運動的歷史"
+      }
+    },
+    "events": [
+      {
+        "media": {
+          "url": "images/declaration2.jpg",
+          "caption": "《獨立宣言》簽署"
+        },
+        "start_date": {
+          "year": "1776",
+          "month": "7",
+          "day": "4"
+        },
+        "text": {
+          "headline": "美國獨立宣言簽署",
+          "text": "1776年7月4日，《獨立宣言》標誌著美國脫離英國獨立的開始，成為美國公民權利的第一步。"
+        }
+      },
+      {
+        "media": {
+          "url": "images/Abraham_Linc.jpg",
+          "caption": "亞伯拉罕·林肯"
+        },
+        "start_date": {
+          "year": "1863",
+          "month": "1",
+          "day": "1"
+        },
+        "text": {
+          "headline": "奴隸解放宣言",
+          "text": "1863年，亞伯拉罕·林肯總統頒布奴隸解放宣言，解放了美國南部的奴隸，標誌著美國民權進程的重要一步。"
+        }
+      },
+      {
+        "media": {
+          "url": "images/Luther_King_Jr.jpg",
+          "caption": "馬丁·路德·金的演講"
+        },
+        "start_date": {
+          "year": "1963",
+          "month": "8",
+          "day": "28"
+        },
+        "text": {
+          "headline": "《我有一個夢想》演講",
+          "text": "1963年8月28日，馬丁·路德·金在華盛頓發表了著名的《我有一個夢想》演講，呼籲實現種族平等和公民權利。"
+        }
+      },
+      {
+        "media": {
+          "url": "images/Lyndon_B._Jo.jpg",
+          "caption": "1964年《民權法案》簽署"
+        },
+        "start_date": {
+          "year": "1964",
+          "month": "7",
+          "day": "2"
+        },
+        "text": {
+          "headline": "1964年《民權法案》",
+          "text": "1964年7月2日，總統林登·詹森簽署《民權法案》，禁止基於種族、膚色、宗教、性別或國家起源的歧視。"
+        }
+      }
+    ]
+  }
+  

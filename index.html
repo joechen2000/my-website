@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>數位敘事網站 - 美國公民權利歷史</title>
+    
+    <!-- 原本的樣式和腳本 -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -12,6 +14,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Timeline.js 所需的 CSS 和 JS -->
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
@@ -230,8 +237,16 @@
         .close-button:hover {
             color: #ff0000;
         }
+
+        /* Timeline container style */
+        #timeline-embed {
+            width: 100%;
+            height: 600px;
+            margin-top: 50px;
+        }
     </style>
 </head>
+
 
 <body>
     <header>
@@ -334,24 +349,36 @@
 
 
         <!-- 第三幕 -->
-
-<!-- 國際特赦組織報告嵌入 -->
 <section id="act3" class="section animate__animated">
     <h2>普世人權與國際法</h2>
-    <p>人權並非美國專屬，全球範圍內的人權運動推動了《公民權利和政治權利國際公約》（ICCPR）和《經濟、社會及文化權利國際公約》（ICESCR）的實施。</p>
+    <p>人權並非美國專屬，全球範圍內的人權運動推動了《公民權利和政治權利國際公約》（ICCPR）和《經濟、社會及文化權利國際公約》（ICESCR）的實施，這些公約是全球人權框架的基石。</p>
     <div class="interactive" data-content="human_rights">
         <img src="images/human_rights.jpg" alt="聯合國簽署人權宣言" class="clickable">
         <p>點擊查看國際人權的發展歷史</p>
     </div>
-    <!-- 新增動態加載按鈕 -->
+
+    <!-- 新增時間軸嵌入點 -->
+    <div id="timeline-embed" class="timeline-embed"></div>
+
+    <!-- 加載人權報告的按鈕 -->
     <div class="load-report">
         <button onclick="loadHumanRightsReport()">查看最新人權報告</button>
     </div>
     <div id="report-container"></div>
 </section>
 
-
 <script>
+    // 初始化 Timeline.js
+    var additionalOptions = {
+        start_at_end: false, // 時間軸自動開始於最新事件
+        language: "zh-tw" // 設置語言
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+        // 確保頁面加載完成後再初始化 Timeline.js
+        var timeline = new TL.Timeline('timeline-embed', 'data/timeline_data.json', additionalOptions);
+    });
+
+    // 加載人權報告
     function loadHumanRightsReport() {
         const container = document.getElementById('report-container');
         container.innerHTML = `
@@ -363,15 +390,20 @@
     }
 </script>
 
+<style>
+    /* 簡化版 CSS，用於時間軸的基本設置 */
+    #timeline-embed {
+        width: 100%;
+        height: 500px;
+        margin-top: 30px;
+    }
+</style>
 
-<script>
-    document.getElementById('amnesty-iframe').addEventListener('error', function() {
-        document.getElementById('iframe-fallback').style.display = 'block';
-    });
-</script>
 
 
-        <!-- 結尾 -->
+
+
+<!-- 結尾 -->
 <section id="conclusion" class="section animate__animated">
     <div class="conclusion-content">
         <h2>未來由你來改變</h2>
@@ -386,7 +418,7 @@
         </div>
         <div class="call-to-action">
             <button onclick="shareYourPromise()">分享你的行動計劃</button>
-            <button onclick="joinCommunity()">加入我們的臉書社群</button>
+            <button onclick="joinCommunity()">加入我們的學生社區</button>
         </div>
         <div id="promise-container"></div>
     </div>
@@ -415,8 +447,8 @@
     }
 
     function joinCommunity() {
-        alert("感謝你對人權的關注！加入我們的臉書社群，一起行動！");
-        window.open("https://www.facebook.com/Flyingreader", "_blank"); // 修改為實際的社區連結
+        alert("感謝你對人權的關注！加入我們的學生社區，一起行動！");
+        window.location.href = "https://yourcommunitylink.com"; // 修改為實際的社區連結
     }
 </script>
 
@@ -524,6 +556,7 @@
 
 
 
+
     </main>
     <footer>
         <p>&copy; 2024 數位敘事網站</p>
@@ -532,3 +565,4 @@
 </body>
 
 </html>
+
