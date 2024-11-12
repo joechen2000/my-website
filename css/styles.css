@@ -476,3 +476,120 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
+
+/* 模態視窗的 CSS */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none; /* 預設隱藏 */
+}
+
+.modal-content {
+    background: linear-gradient(to right, #ffffff, #f7f9fc);
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation-duration: 1s;
+}
+
+.modal-text {
+    margin-bottom: 30px;
+}
+
+.modal-text h11 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #003366;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.5px;
+}
+
+
+.modal-text .tagline {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.highlight-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ffaa00;
+}
+
+.material-details {
+    margin: 20px 0;
+}
+
+.material {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.material h13 {
+    font-size: 1.5rem;
+    color: #048000;
+    margin-bottom: 5px;
+}
+
+.material h15 {
+    font-size: 1.5rem;
+    color: #000280;
+    margin-bottom: 5px;
+}
+
+
+.material-highlight {
+    font-size: 1.3rem;
+    color: #ff6600;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #333;
+}
+
+.close-button:hover {
+    color: #ff0000;
+}
+
+.enter-button {
+    background: linear-gradient(to right, #ffaa00, #ffcc00);
+    color: #004080;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.enter-button:hover {
+    background: linear-gradient(to right, #ff8800, #ffaa00);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
