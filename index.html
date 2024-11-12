@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龍騰文化數位敘事網站 - 美國公民權利歷史</title>
+    <title>數位敘事網站 - 美國公民權利歷史</title>
     
     <!-- 原本的樣式和腳本 -->
     <link rel="stylesheet" href="css/styles.css">
@@ -337,6 +337,9 @@
 
        <!-- 序幕 -->
 <section id="prologue" class="section animate__animated">
+    <!-- 背景圖片 -->
+    <div class="background-image"></div>
+
     <h2>美國的誕生與公民身份</h2>
     <p>最初的美國公民權利僅限於白人男性，奴隸和婦女並不享有公民權。18世紀晚期，北美殖民地經歷了獨立戰爭，這是美國公民身份演變的起點。</p>
    
@@ -359,7 +362,6 @@
             <div class="piece" draggable="true" ondragstart="drag(event)" id="piece2">
                 我們被造物主賦予了若干不可剝奪的權利，其中包括生命、自由和追求幸福的權利。
             </div>
-            
         </div>
 
         <!-- 拼圖目標區域 -->
@@ -450,11 +452,37 @@
 
 <!-- CSS 部分 -->
 <style>
+    #prologue {
+        position: relative;
+        padding: 60px 40px;
+        margin-bottom: 60px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        color: #333;
+        background: #fff;
+    }
+
+    /* 背景圖片設置 */
+    .background-image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('images/declaration.jpg') no-repeat center center;
+        background-size: cover;
+        opacity: 0.2; /* 調整圖片的透明度 */
+        z-index: 0; /* 最底層 */
+    }
+
     #puzzle-container {
+        position: relative;
+        z-index: 1; /* 確保內容在背景上方 */
         margin-top: 30px;
-        background-color: #f9f9f9;
         padding: 20px;
         border-radius: 10px;
+        background-color: rgba(249, 249, 249, 0.9);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
@@ -468,17 +496,23 @@
     .piece {
         width: 200px;
         padding: 15px;
-        background-color: #ffcc00;
+        background-color: #fff8e1;
         border-radius: 10px;
         cursor: grab;
-        border: 2px solid #004080;
+        border: 2px solid #8b5e34;
         text-align: center;
         font-weight: bold;
-        transition: transform 0.2s;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     .piece:active {
         cursor: grabbing;
+    }
+
+    .piece:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     #puzzle-target {
@@ -486,7 +520,7 @@
         gap: 20px;
         justify-content: center;
         flex-wrap: wrap;
-        border: 2px dashed #0059b3;
+        border: 2px dashed #8b5e34;
         padding: 20px;
         border-radius: 15px;
     }
@@ -502,6 +536,7 @@
         align-items: center;
         justify-content: center;
         font-size: 0.9rem;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .target-slot.correct {
@@ -520,7 +555,7 @@
     }
 
     .reset-container button {
-        background-color: #ff8800;
+        background-color: #8b5e34;
         color: #fff;
         padding: 10px 20px;
         border: none;
@@ -531,10 +566,9 @@
     }
 
     .reset-container button:hover {
-        background-color: #ff6600;
+        background-color: #5a3a22;
     }
 </style>
-
 
 
 
