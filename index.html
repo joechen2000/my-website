@@ -19,7 +19,79 @@
     <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
     <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
 
-    <style>
+<style>
+    @media (max-width: 768px) {
+        /* 調整頁面整體間距，讓小螢幕看起來更好 */
+        body {
+            padding: 10px;
+        }
+
+        /* 標題和段落的間距調整，讓文字閱讀更友善 */
+        h2, p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        /* 將頭部導覽列改成單列顯示，適應手機大小 */
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* 修正內容寬度，確保不會有水平滾動條 */
+        main {
+            max-width: 100%;
+            padding: 10px;
+        }
+
+        /* 修正數位拼圖挑戰中的拼圖塊寬度，使其在手機上更合適 */
+        .piece {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        .target-slot {
+            width: 100%;
+            height: auto;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        /* 模態視窗的寬度和內部間距在手機上做調整 */
+        .modal-content {
+            width: 95%;
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        /* 按鈕寬度調整，確保在手機上點擊方便 */
+        .call-to-action button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        /* 修正背景圖片在行動裝置上的顯示比例 */
+        .background-image {
+            background-size: cover;
+            opacity: 0.2; /* 提高背景圖片的可見度，使其在小螢幕上更美觀 */
+        }
+
+        /* 垂直堆疊所有憲法修正案的卡片 */
+        .amendments-container {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .amendment {
+            width: 100%;
+            padding: 15px;
+        }
+    }
+    
         body {
             font-family: 'Noto Sans TC', sans-serif;
             line-height: 1.6;
