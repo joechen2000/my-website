@@ -300,3 +300,67 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const amendmentData = {
+        amendment13: {
+            title: "第13號修正案 - 廢除奴隸制",
+            content: `
+                <p>第13號修正案於1865年通過，正式廢除了美國境內的奴隸制度。</p>
+                <p>影響：這一修正案標誌著數百萬被奴役者的自由，但在經濟和社會層面，黑人依然面臨著重大的不平等。</p>
+                <img src="images/amendment13_effect.jpg" alt="第13號修正案影響" class="amendment-image">
+            `
+        },
+        amendment14: {
+            title: "第14號修正案 - 公民權擴展",
+            content: `
+                <p>第14號修正案於1868年通過，賦予所有出生在美國的人以公民身份，並確保每位公民的平等保護權。</p>
+                <p>影響：這一修正案對美國的種族平等產生了深遠影響，特別是在後來的民權運動中提供了法律支持。</p>
+                <img src="images/amendment14_effect.jpg" alt="第14號修正案影響" class="amendment-image">
+            `
+        },
+        amendment15: {
+            title: "第15號修正案 - 男性選舉權保障",
+            content: `
+                <p>第15號修正案於1870年通過，保障所有男性公民的選舉權，無論種族、膚色或曾經的奴役身份。</p>
+                <p>影響：這是向普選權的重要一步，但隨後的選舉中依然存在多種形式的歧視和壓制。</p>
+                <img src="images/amendment15_effect.jpg" alt="第15號修正案影響" class="amendment-image">
+            `
+        }
+    };
+
+    // 綁定修正案點擊事件
+    document.querySelectorAll('.amendment').forEach(function(element) {
+        element.addEventListener('click', function() {
+            const amendmentKey = this.dataset.amendment;
+            showAmendmentDetails(amendmentKey);
+        });
+    });
+
+    // 顯示模態視窗
+    function showAmendmentDetails(amendmentKey) {
+        const amendmentInfo = document.getElementById('amendment-info');
+        amendmentInfo.innerHTML = `
+            <h3>${amendmentData[amendmentKey].title}</h3>
+            ${amendmentData[amendmentKey].content}
+        `;
+        const modal = document.getElementById('amendment-details');
+        modal.style.display = 'flex';
+    }
+
+    // 關閉模態視窗
+    function closeAmendmentDetails() {
+        const modal = document.getElementById('amendment-details');
+        modal.style.display = 'none';
+    }
+
+    // 確保關閉按鈕和模態視窗空白區域的點擊事件可以正確觸發
+    document.addEventListener('click', function(event) {
+        const modal = document.getElementById('amendment-details');
+        if (event.target.classList.contains('close-button')) {
+            closeAmendmentDetails();
+        } else if (event.target === modal) {
+            closeAmendmentDetails();
+        }
+    });
+});
+

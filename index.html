@@ -198,31 +198,6 @@
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 50px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 80vh;
-            overflow-y: auto;
-            text-align: left;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
 
         .close-button {
             font-size: 1.8rem;
@@ -310,7 +285,7 @@
         <span class="close-button">&times;</span>
         <div class="modal-text">
             <h11>歡迎來到數位敘事網站！</h11>
-            <p class="tagline">從人權歷史的長河中汲取力量，學習那些推動普世價值的人們的故事。你也可以成為捍衛平等、自由與正義的行動者，共同塑造一個更美好的未來。</p>
+            <p class="tagline">探索人權歷史，成為改變未來的一份子。</p>
             <h2 class="highlight-title">配合龍騰教材</h2>
             <div class="material-details">
                 <div class="material">
@@ -360,53 +335,365 @@
 
 
 
-        <!-- 序幕 -->
-        <section id="prologue" class="section animate__animated">
-            <h2>美國的誕生與公民身份</h2>
-            <p>最初的美國公民權利僅限於白人男性，奴隸和婦女並不享有公民權。18世紀晚期，北美殖民地經歷了獨立戰爭，這是美國公民身份演變的起點。</p>
-            <div class="interactive" data-content="declaration">
-                <img src="images/declaration.jpg" alt="獨立宣言" class="clickable">
-                <p>點擊查看《獨立宣言》相關段落</p>
-            </div>
-        </section>
+       <!-- 序幕 -->
+<section id="prologue" class="section animate__animated">
+    <h2>美國的誕生與公民身份</h2>
+    <p>最初的美國公民權利僅限於白人男性，奴隸和婦女並不享有公民權。18世紀晚期，北美殖民地經歷了獨立戰爭，這是美國公民身份演變的起點。</p>
+   
+    <!-- 數位拼圖挑戰 -->
+    <div id="puzzle-container">
+        <h3>數位拼圖挑戰：重構《獨立宣言》</h3>
+        <p>將以下《獨立宣言》的段落拼合在正確的順序中，以了解它們的歷史意涵。</p>
 
-        <!-- 第一幕 -->
-        <section id="act1" class="section animate__animated">
-            <h2>憲法修正案與南北戰爭</h2>
-            <p>19世紀中期，南北戰爭席捲全國，為解放奴隸和統一國家而戰，在這場戰爭後，通過了憲法修正案，重新定義了美國的公民身份。第13號修正案廢除了奴隸制，第14號修正案賦予所有出生於美國的人民公民身份，第15號修正案保障了男性的選舉權，無論其種族。1920年第十九修正案獲批准後，女性才被授予投票權。</p>
-            <div class="interactive" data-content="amendments">
-                <img src="images/amendments.jpg" alt="憲法修正案" class="clickable">
-                <p>點擊查看修正案的具體內容</p>
+        <!-- 拼圖片段 -->
+        <div id="puzzle-pieces">
+            <div class="piece" draggable="true" ondragstart="drag(event)" id="piece3">
+                為了保障這些權利，人們在其同意下組建政府。
             </div>
-        </section>
+            <div class="piece" draggable="true" ondragstart="drag(event)" id="piece4">
+                當任何政府變得破壞這些目的時，人民有權予以改變或廢除它。
+            </div>
+            <div class="piece" draggable="true" ondragstart="drag(event)" id="piece1">
+                真理是不言而喻的：所有人都是生而平等的。
+            </div>
+            <div class="piece" draggable="true" ondragstart="drag(event)" id="piece2">
+                我們被造物主賦予了若干不可剝奪的權利，其中包括生命、自由和追求幸福的權利。
+            </div>
+            
+        </div>
 
-        <!-- 第二幕 -->
-<section id="act2" class="section animate__animated">
-    <h2>民權運動與現代公民權利</h2>
-    <p>1950至1960年代，非裔美國人和其他少數族裔的民權運動如火如荼，要求真正的平等。這場運動促使了1964年的《民權法案》成為里程碑。</p>
-    <div class="interactive" data-content="civil_rights">
-        <img src="images/civil_rights.jpg" alt="民權運動" class="clickable">
-        <p>點擊參與民權運動中的辯論</p>
-    </div>
-    <!-- 新增SDG 16連結 -->
-    <div class="interactive" id="sdg16-link">
-        <img src="images/sdg16.jpg" alt="和平與正義制度" class="clickable sdg16-image">
-        <p>點擊查看SDG 16：和平與正義制度</p>
-    </div>
-    
+        <!-- 拼圖目標區域 -->
+        <div id="puzzle-target">
+            <div class="target-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="target1"></div>
+            <div class="target-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="target2"></div>
+            <div class="target-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="target3"></div>
+            <div class="target-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="target4"></div>
+        </div>
+
+        <!-- 重置拼圖按鈕 -->
+        <div class="reset-container">
+            <button onclick="resetPuzzle()">重置拼圖</button>
+        </div>
     </div>
 </section>
+
+<!-- JavaScript 部分 -->
+<script>
+    // 允許目標區域接受拖放元素
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    // 開始拖動元素
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    // 放下元素到目標區域
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var target = ev.target;
+
+        // 確保只把拼圖放到空的目標槽中
+        if (!target.hasChildNodes() && target.classList.contains('target-slot')) {
+            target.appendChild(document.getElementById(data));
+            checkCompletion();
+        }
+    }
+
+    // 驗證拼圖是否正確完成
+    function checkCompletion() {
+        const targetSlots = document.querySelectorAll('.target-slot');
+        let isComplete = true;
+
+        // 驗證拼圖段落的順序是否正確
+        targetSlots.forEach((slot, index) => {
+            if (slot.hasChildNodes()) {
+                const pieceId = slot.firstChild.id;
+                if (pieceId !== `piece${index + 1}`) {
+                    isComplete = false;
+                    slot.classList.remove('correct');
+                    slot.classList.add('incorrect');
+                } else {
+                    slot.classList.remove('incorrect');
+                    slot.classList.add('correct');
+                }
+            } else {
+                isComplete = false;
+                slot.classList.remove('correct');
+                slot.classList.remove('incorrect');
+            }
+        });
+
+        // 如果完成並正確，給出提示
+        if (isComplete) {
+            targetSlots.forEach(slot => {
+                slot.classList.add('correct');
+            });
+            alert('恭喜你完成了拼圖！這些段落展示了美國獨立宣言中的核心價值觀，尤其是所有人的平等和自由。');
+        }
+    }
+
+    // 重置拼圖
+    function resetPuzzle() {
+        const targetSlots = document.querySelectorAll('.target-slot');
+        targetSlots.forEach(slot => {
+            if (slot.hasChildNodes()) {
+                document.getElementById('puzzle-pieces').appendChild(slot.firstChild);
+            }
+            slot.classList.remove('correct');
+            slot.classList.remove('incorrect');
+        });
+    }
+</script>
+
+<!-- CSS 部分 -->
+<style>
+    #puzzle-container {
+        margin-top: 30px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #puzzle-pieces {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .piece {
+        width: 200px;
+        padding: 15px;
+        background-color: #ffcc00;
+        border-radius: 10px;
+        cursor: grab;
+        border: 2px solid #004080;
+        text-align: center;
+        font-weight: bold;
+        transition: transform 0.2s;
+    }
+
+    .piece:active {
+        cursor: grabbing;
+    }
+
+    #puzzle-target {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        border: 2px dashed #0059b3;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .target-slot {
+        width: 220px;
+        height: 100px;
+        background-color: #fff;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .target-slot.correct {
+        border: 2px solid #28a745;
+        background-color: #e6ffee;
+    }
+
+    .target-slot.incorrect {
+        border: 2px solid #dc3545;
+        background-color: #ffe6e6;
+    }
+
+    .reset-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .reset-container button {
+        background-color: #ff8800;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .reset-container button:hover {
+        background-color: #ff6600;
+    }
+</style>
+
+
+
+
+        <!-- 第一幕：憲法修正案與南北戰爭 -->
+<section id="act1" class="section animate__animated">
+    <h2>憲法修正案與南北戰爭</h2>
+    <p>19世紀中期，南北戰爭席捲全國，為解放奴隸和統一國家而戰。這場戰爭後，通過了一系列憲法修正案，重新定義了美國的公民身份。</p>
+    <div class="amendments-container">
+        <div class="amendment" data-amendment="amendment13">
+            <h3>第13號修正案</h3>
+            <p>廢除奴隸制</p>
+        </div>
+        <div class="amendment" data-amendment="amendment14">
+            <h3>第14號修正案</h3>
+            <p>賦予所有出生於美國的人民公民身份</p>
+        </div>
+        <div class="amendment" data-amendment="amendment15">
+            <h3>第15號修正案</h3>
+            <p>保障男性選舉權</p>
+        </div>
+    </div>
+</section>
+
+<!-- 修正案詳情的模態視窗 -->
+<div id="amendment-details" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div id="amendment-info"></div>
+    </div>
+</div>
+
+
+        <!-- 第二幕：民權運動與現代公民權利 -->
+<section id="act2" class="section debate-section animate__animated">
+    <div class="debate-content">
+        <h2>民權運動與現代公民權利</h2>
+        
+        <div class="interactive debate-container">
+            <h3>模擬辯論：你如何看待政府應對民權抗議的政策？</h3>
+            <p>背景資訊：在1960年代的美國，非裔美國人以及其他少數族裔為了爭取平等的公民權，發起了一系列抗議活動。政府面對抗議群眾時，考慮到了社會秩序與公眾壓力，有些官員主張採取強硬手段來鎮壓抗議，另一些則提議通過對話和改革來解決問題。</p>
+            <p>請根據以下選項，選擇你認為政府應採取的應對策略：</p>
+            <div class="debate-choices">
+                <button onclick="choosePolicy('support')" class="debate-button">支持強硬政策鎮壓抗議</button>
+                <button onclick="choosePolicy('oppose')" class="debate-button">反對鎮壓，支持通過對話進行改革</button>
+            </div>
+            <div id="debate-result" class="debate-result"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function choosePolicy(choice) {
+        const resultContainer = document.getElementById('debate-result');
+        let resultText = '';
+
+        if (choice === 'support') {
+            resultText = `
+                <h4>你的選擇：支持強硬政策鎮壓抗議</h4>
+                <p>你選擇了支持強硬鎮壓的政策。</p>
+                <p>結果：政府派遣了警力鎮壓抗議者，短期內恢復了秩序，但這導致民眾更加不滿，抗議活動在隨後的幾年變得更激烈，最終迫使政府在社會壓力下做出讓步。</p>
+                <p>歷史教訓：強硬鎮壓可能會在短期內達成控制效果，但往往無法解決根本問題，反而可能加劇社會矛盾。</p>
+            `;
+        } else if (choice === 'oppose') {
+            resultText = `
+                <h4>你的選擇：反對鎮壓，支持通過對話進行改革</h4>
+                <p>你選擇了反對鎮壓的政策，支持以對話的方式進行改革。</p>
+                <p>結果：政府選擇與抗議者進行對話，聽取他們的訴求，並逐步推行改革，這使得抗議活動相對平和地結束。</p>
+                <p>歷史教訓：通過對話和妥協，政府能夠減少社會矛盾，並推動更持久的社會變革。</p>
+            `;
+        }
+
+        // 顯示選擇結果
+        resultContainer.innerHTML = resultText;
+    }
+</script>
+
+<style>
+    .debate-section {
+        position: relative;
+        background-image: url('images/A_realistic_illustration_depicting_the_Civil_Right.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 60px 20px;
+        color: #fff;
+    }
+
+    .debate-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .debate-content {
+        position: relative;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        color: #333;
+    }
+
+    .debate-container {
+        margin-top: 20px;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 15px;
+        background: rgba(240, 242, 245, 0.95);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .debate-choices {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+    }
+
+    .debate-button {
+        background: linear-gradient(to right, #ffaa00, #ffcc00);
+        color: #004080;
+        border: none;
+        padding: 15px 20px;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .debate-button:hover {
+        background: linear-gradient(to right, #ff8800, #ffaa00);
+        transform: translateY(-3px);
+    }
+
+    .debate-result {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #333;
+        line-height: 1.6;
+    }
+
+
+    h3 {
+        color: #004080;
+    }
+</style>
+
 
 
         <!-- 第三幕 -->
 <section id="act3" class="section animate__animated">
     <h2>普世人權與國際法</h2>
     <p>人權並非美國專屬，全球範圍內的人權運動推動了《公民權利和政治權利國際公約》（ICCPR）和《經濟、社會及文化權利國際公約》（ICESCR）的實施，這些公約是全球人權框架的基石。</p>
-    <div class="interactive" data-content="human_rights">
-        <img src="images/human_rights.jpg" alt="聯合國簽署人權宣言" class="clickable">
-        <p>點擊查看國際人權的發展歷史</p>
-    </div>
-
+   
     <!-- 新增時間軸嵌入點 -->
     <div id="timeline-embed" class="timeline-embed"></div>
 
@@ -433,7 +720,7 @@
         const container = document.getElementById('report-container');
         container.innerHTML = `
             <h3>國際特赦組織最新報告</h3>
-            <a href="https://www.amnesty.org/en/latest/reports/" target="_blank">點擊這裡查看國際特赦組織最新報告</a>
+            <a href="https://www.amnesty.org/en/" target="_blank">點擊這裡查看國際特赦組織最新報告</a>
             <h3>自由之家最新報告</h3>
             <a href="https://freedomhouse.org/reports" target="_blank">點擊這裡查看自由之家最新報告</a>
         `;
@@ -468,7 +755,7 @@
         </div>
         <div class="call-to-action">
             <button onclick="shareYourPromise()">分享你的行動計劃</button>
-            <button onclick="joinCommunity()">加入我們的學生社區</button>
+            <button onclick="joinCommunity()">加入我們的臉書社群</button>
         </div>
         <div id="promise-container"></div>
     </div>
@@ -497,8 +784,9 @@
     }
 
     function joinCommunity() {
-        alert("感謝你對人權的關注！加入我們的學生社區，一起行動！");
-        window.location.href = "https://yourcommunitylink.com"; // 修改為實際的社區連結
+        alert("感謝你對人權的關注！加入我們的臉書社群，一起行動！");
+        
+        window.open("https://www.facebook.com/Flyingreader", "_blank"); // 修改為實際的社區連結
     }
 </script>
 
